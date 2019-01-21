@@ -266,11 +266,11 @@ const EntityContainerHOC = WrappedComponent =>
   };
 
 const mapStateToProps = (state: State, ownProps) => ({
-  canvas: state.canvas,
-  meta: state.metaEntity.find(
+  canvas: state.workflow.canvas,
+  meta: state.workflow.metaEntity.find(
     metaEntity => metaEntity.id === ownProps.model.id
   ),
-  entityTypes: state.config.entityTypes,
+  entityTypes: state.workflow.config.entityTypes,
   defaultEntity: defaultEntity(state),
 });
 

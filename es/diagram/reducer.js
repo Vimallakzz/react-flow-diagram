@@ -4,7 +4,7 @@ import configReducer from '../config/reducer';
 import history from '../history/reducer';
 
 var defaultCoords = { x: 0, y: 0 };
-var initialState = {
+export var initialState = {
   entity: [],
   metaEntity: [],
   canvas: {

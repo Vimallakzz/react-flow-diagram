@@ -286,12 +286,12 @@ class CanvasContainer extends React.PureComponent<
 }
 
 const makeConnectingLinks = (state: State): LinksType => {
-  if (state.canvas.connecting.currently) {
+  if (state.workflow.canvas.connecting.currently) {
     const points: Array<Point> = calcLinkPoints(
-      state.entity.find(entity => entity.id === state.canvas.connecting.from),
+      state.workflow.entity.find(entity => entity.id === state.workflow.canvas.connecting.from),
       {
-        x: state.canvas.cursor.x,
-        y: state.canvas.cursor.y,
+        x: state.workflow.canvas.cursor.x,
+        y: state.workflow.canvas.cursor.y,
         width: 0,
         height: 0,
       }
@@ -309,12 +309,12 @@ const makeConnectingLinks = (state: State): LinksType => {
 };
 
 const mapStateToProps = (state: State) => ({
-  entities: state.entity,
-  isConnecting: state.canvas.connecting.currently,
+  entities: state.workflow.entity,
+  isConnecting: state.workflow.canvas.connecting.currently,
   connectingLink: makeConnectingLinks(state),
-  gridSize: state.canvas.gridSize,
-  artboard: state.canvas.canvasArtboard,
-  zoomLevel: state.canvas.zoom,
+  gridSize: state.workflow.canvas.gridSize,
+  artboard: state.workflow.canvas.canvasArtboard,
+  zoomLevel: state.workflow.canvas.zoom,
 });
 
 export default connect(mapStateToProps, {

@@ -131,9 +131,9 @@ class PanelContainer extends React.PureComponent<PanelContainerProps> {
 }
 
 const mapStateToProps = (state: State) => ({
-  entityTypes: state.config.entityTypes,
+  entityTypes: state.workflow.config.entityTypes,
   defaultEntity: defaultEntity(state),
-  gridSize: state.canvas.gridSize,
+  gridSize: state.workflow.canvas.gridSize,
 });
 
 export default connect(mapStateToProps, { addEntity })(PanelContainer);

@@ -123,9 +123,9 @@ var PanelContainer = function (_React$PureComponent) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    entityTypes: state.config.entityTypes,
+    entityTypes: state.workflow.config.entityTypes,
     defaultEntity: defaultEntity(state),
-    gridSize: state.canvas.gridSize
+    gridSize: state.workflow.canvas.gridSize
   };
 };
 

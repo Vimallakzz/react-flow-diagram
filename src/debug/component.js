@@ -73,7 +73,7 @@ export default connect(null, { undo, redo, zoom })(Debug);
 
 // https://github.com/flowtype/flow-typed/issues/1269#issuecomment-332100335
 const mapStateToProps: MapStateToProps<any, any, any> = (state: State) => ({
-  canvas: state.canvas,
+  canvas: state.workflow.canvas,
 });
 
 // <Fairy /> component lives inside <CanvasArtboard>

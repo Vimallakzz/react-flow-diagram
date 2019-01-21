@@ -9,6 +9,8 @@ import type {
   ActionType,
 } from '../diagram/reducer';
 
+import { initialState } from '../diagram/reducer';
+
 export type HistoryStateShape<T> = {
   past: Array<T>,
   future: Array<T>,
@@ -29,6 +31,9 @@ const history = (reducer: Reducer<State, Action>) => (
   state: State,
   action: Action
 ): State => {
+  if(!state) {
+    state = initialState
+  }
   const nextState = reducer(state, action);
   switch (action.type) {
     case 'rd/canvas/TRACK':

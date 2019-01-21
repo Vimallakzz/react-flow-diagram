@@ -232,12 +232,12 @@ var CanvasContainer = function (_React$PureComponent) {
 }(React.PureComponent);
 
 var makeConnectingLinks = function makeConnectingLinks(state) {
-  if (state.canvas.connecting.currently) {
-    var points = calcLinkPoints(state.entity.find(function (entity) {
-      return entity.id === state.canvas.connecting.from;
+  if (state.workflow.canvas.connecting.currently) {
+    var points = calcLinkPoints(state.workflow.entity.find(function (entity) {
+      return entity.id === state.workflow.canvas.connecting.from;
     }), {
-      x: state.canvas.cursor.x,
-      y: state.canvas.cursor.y,
+      x: state.workflow.canvas.cursor.x,
+      y: state.workflow.canvas.cursor.y,
       width: 0,
       height: 0
     });
@@ -253,12 +253,12 @@ var makeConnectingLinks = function makeConnectingLinks(state) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    entities: state.entity,
-    isConnecting: state.canvas.connecting.currently,
+    entities: state.workflow.entity,
+    isConnecting: state.workflow.canvas.connecting.currently,
     connectingLink: makeConnectingLinks(state),
-    gridSize: state.canvas.gridSize,
-    artboard: state.canvas.canvasArtboard,
-    zoomLevel: state.canvas.zoom
+    gridSize: state.workflow.canvas.gridSize,
+    artboard: state.workflow.canvas.canvasArtboard,
+    zoomLevel: state.workflow.canvas.zoom
   };
 };
 

@@ -34,7 +34,7 @@ export type State = {
 };
 
 const defaultCoords = { x: 0, y: 0 };
-const initialState = {
+export const initialState = {
   entity: [],
   metaEntity: [],
   canvas: {

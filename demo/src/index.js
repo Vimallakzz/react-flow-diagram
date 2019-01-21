@@ -3,7 +3,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import styled, { injectGlobal } from 'styled-components';
-import { Diagram, store, setEntities, setConfig } from '../../src';
+// import { Diagram, store, setEntities, setConfig } from '../../src';
+import { Diagram } from '../../src';
 import model from './model-example';
 import { config, customEntities } from './config-example';
 
@@ -29,8 +30,8 @@ const Main = styled.main`
 
 class Demo extends React.PureComponent<{}> {
   componentWillMount() {
-    store.dispatch(setEntities(model));
-    store.dispatch(setConfig(config));
+    // store.dispatch(setEntities(model));
+    // store.dispatch(setConfig(config));
   }
   render() {
     return (

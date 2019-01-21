@@ -76,7 +76,7 @@ export default connect(null, { undo: undo, redo: redo, zoom: zoom })(Debug);
 // https://github.com/flowtype/flow-typed/issues/1269#issuecomment-332100335
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    canvas: state.canvas
+    canvas: state.workflow.canvas
   };
 };
 
