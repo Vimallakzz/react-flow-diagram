@@ -1,0 +1,16 @@
+[ignore]
+.*/coverage/.*
+.*/demo/dist/.*
+.*/es/.*
+.*/lib/.*
+.*/node_modules/.*
+.*/umd/.*
+
+[include]
+
+[libs]
+flow-typed-definition/
+
+[lints]
+
+[options]

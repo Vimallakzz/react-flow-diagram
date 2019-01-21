@@ -1,0 +1,70 @@
+module.exports = {
+  parser: 'babel-eslint',
+  plugins: ['flowtype'],
+  extends: ['airbnb', 'prettier', 'prettier/flowtype', 'prettier/react'],
+  env: {
+    browser: true,
+  },
+  rules: {
+    'no-else-return': 0,
+    'flowtype/boolean-style': [2, 'boolean'],
+    'flowtype/define-flow-type': 1,
+    'flowtype/no-primitive-constructor-types': 2,
+    'flowtype/no-types-missing-file-annotation': 2,
+    'flowtype/no-weak-types': 2,
+    'flowtype/require-parameter-type': [2, { excludeArrowFunctions: true }],
+    'flowtype/require-valid-file-annotation': 2,
+    'flowtype/type-id-match': [2, '^[A-Z]+.*$'],
+    'flowtype/use-flow-type': 1,
+    'flowtype/valid-syntax': 1,
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/sort-comp': [
+      1,
+      {
+        order: [
+          'type-annotations',
+          'static-methods',
+          'lifecycle',
+          'everything-else',
+          'render',
+        ],
+        groups: {
+          lifecycle: [
+            'displayName',
+            'propTypes',
+            'contextTypes',
+            'childContextTypes',
+            'mixins',
+            'statics',
+            'defaultProps',
+            'constructor',
+            'getDefaultProps',
+            'getInitialState',
+            'state',
+            'getChildContext',
+            'componentWillMount',
+            'componentDidMount',
+            'componentWillReceiveProps',
+            'shouldComponentUpdate',
+            'componentWillUpdate',
+            'componentDidUpdate',
+            'componentWillUnmount',
+          ],
+        },
+      },
+    ],
+  },
+  settings: {
+    flowtype: {
+      onlyFilesWithFlowAnnotation: false,
+    },
+  },
+};
